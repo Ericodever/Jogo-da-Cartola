@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 551698807606421913}
   - component: {fileID: 8091805996945773128}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,8 @@ GameObject:
   - component: {fileID: 860972329758498685}
   - component: {fileID: 8319234437405276362}
   - component: {fileID: 6421496975340869840}
-  m_Layer: 0
+  - component: {fileID: 8759789827494376128}
+  m_Layer: 6
   m_Name: Bowling Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,3 +182,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8759789827494376128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296609089423342933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 327ea698fa5a85a45bb6706b5a511414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
