@@ -8,6 +8,9 @@ public class SpawnController : MonoBehaviour
     [SerializeField] private float topDistance, lateralMargin;
     private Vector2 screenWidth;
     private GameController gameController;
+    [SerializeField] private Transform allBallsParent;
+
+    [System.Obsolete]
     private void Awake()
     {
         Initialize();
@@ -28,6 +31,8 @@ public class SpawnController : MonoBehaviour
     {
         StartCoroutine(Spawn());
     }
+
+    [System.Obsolete]
     private void Initialize()
     {
         screenWidth = Camera.main.ScreenToWorldPoint(new Vector2(Screen.safeArea.width, Screen.safeArea.height));
@@ -44,6 +49,7 @@ public class SpawnController : MonoBehaviour
             yield return new WaitForSeconds(0f);
             transform.position = new Vector2(Random.Range(-screenWidth.x + lateralMargin, screenWidth.x - lateralMargin), transform.position.y);
             GameObject tempBallPrefab = Instantiate(ballPrefab, transform.position, Quaternion.identity) as GameObject;
+            tempBallPrefab.transform.parent = allBallsParent;
         }
 
         else

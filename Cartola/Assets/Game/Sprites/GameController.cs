@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GameController : MonoBehaviour
 {
-    public int score, highscore;
+   [HideInInspector] public int score;
 
-    public float currentTime;
+    private int  highscore;
+
+    private float currentTime;
 
     [SerializeField] private float startTime;
 
-    public bool gameStarted;
+    [HideInInspector] public bool gameStarted;
 
     private UIController uIController;
+
+    [SerializeField] private Transform player;
+    private Vector2 playerPosition;
 
     private void Awake()
     {
@@ -25,6 +31,8 @@ public class GameController : MonoBehaviour
         gameStarted = false;
         uIController = FindAnyObjectByType<UIController>(); 
         highscore = GetScore();
+        uIController.txtTime.text = currentTime.ToString();
+        playerPosition = player.position;
     }
 
     // Update is called once per frame
@@ -58,7 +66,7 @@ public class GameController : MonoBehaviour
 
     public void InvokeCountdownTime()
     {
-        InvokeRepeating("CountdownTime", 1f, 1f);
+        InvokeRepeating("CountdownTime", 0f, 1f);
     }
 
     public void StartGame()
@@ -67,6 +75,7 @@ public class GameController : MonoBehaviour
         currentTime = startTime;
         gameStarted = true;
         InvokeCountdownTime();
+        player.position = playerPosition;
     }
 
     public void BackMainMenu()
@@ -75,9 +84,18 @@ public class GameController : MonoBehaviour
         currentTime = 0f;
         gameStarted = false;
         CancelInvoke("CountdownTime");
+        player.position = playerPosition;
     }
+
+    public float GetCurrentTime()
+    {
+        return currentTime;
+    }
+
     public void CountdownTime()
     {
+        uIController.txtTime.text = currentTime.ToString();
+
        if(currentTime > 0f && gameStarted)
         {
             currentTime -= 1f;

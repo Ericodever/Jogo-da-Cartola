@@ -10,14 +10,15 @@ public class UIController : MonoBehaviour
 
     public GameObject panelMainMenu, panelGame, panelPause, panelGameover;
 
-    public TMP_Text txtHighscore;
+    public TMP_Text txtTime;
+    public TMP_Text txtScore;
     // Start is called before the first frame update
 
     [System.Obsolete]
     void Start()
     {
         gameController = FindObjectOfType<GameController>();
-        txtHighscore.text = "Highscore: " + gameController.GetScore().ToString();
+        
     }
 
     // Update is called once per frame
@@ -51,12 +52,14 @@ public class UIController : MonoBehaviour
     {
         panelGame.gameObject.SetActive(false);
         panelPause.gameObject.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void ButtonResume()
     {
         panelGame.gameObject.SetActive(true);
         panelPause.gameObject.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void ButtonRestart()
@@ -65,6 +68,7 @@ public class UIController : MonoBehaviour
         panelPause.gameObject.SetActive(false);
         panelGameover.gameObject.SetActive(false);
         gameController.StartGame();
+        txtScore.text = gameController.score.ToString();
     }
 
     public void ButtonBackMainMenu()
@@ -73,6 +77,7 @@ public class UIController : MonoBehaviour
         panelMainMenu.gameObject.SetActive(true);
         panelGameover.gameObject.SetActive(false);
         gameController.BackMainMenu();
-        txtHighscore.text = "Highscore: " + gameController.GetScore().ToString();
+        txtScore.text = gameController.score.ToString();
+        Time.timeScale = 1f;
     }
 }
