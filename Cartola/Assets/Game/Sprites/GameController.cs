@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public int score;
+    public int score, highscore;
 
     public float currentTime;
 
@@ -13,18 +13,47 @@ public class GameController : MonoBehaviour
     public bool gameStarted;
 
     private UIController uIController;
+
+    private void Awake()
+    {
+        DeleteHighscore();
+    }
     // Start is called before the first frame update
     void Start()
     {
       
         gameStarted = false;
         uIController = FindAnyObjectByType<UIController>(); 
+        highscore = GetScore();
     }
 
     // Update is called once per frame
     void Update()
     {
        
+    }
+
+    public void SaveScore()
+    {   if (score > highscore)
+        { 
+            highscore = score;
+            PlayerPrefs.SetInt("highscore", highscore);
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    public int GetScore()
+    {
+        int highscore = PlayerPrefs.GetInt("highscore");
+        return highscore;
+    }
+
+    public void DeleteHighscore()
+    {
+        PlayerPrefs.DeleteKey("highscore");
     }
 
     public void InvokeCountdownTime()
@@ -60,6 +89,7 @@ public class GameController : MonoBehaviour
             uIController.panelGameover.gameObject.SetActive(true);
             uIController.panelGame.gameObject.SetActive(false);
             gameStarted = false;
+            SaveScore();
             currentTime = 0f;
             CancelInvoke("CountdownTime");
             return;

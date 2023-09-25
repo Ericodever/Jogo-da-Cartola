@@ -153,6 +153,7 @@ MonoBehaviour:
   panelGame: {fileID: 955770783}
   panelPause: {fileID: 1233784210}
   panelGameover: {fileID: 1592896499}
+  txtHighscore: {fileID: 169354572}
 --- !u!4 &74220977
 Transform:
   m_ObjectHideFlags: 0
@@ -1022,8 +1023,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  highscore: 0
   currentTime: 0
-  startTime: 5
+  startTime: 10
   gameStarted: 0
 --- !u!4 &740219080
 Transform:
