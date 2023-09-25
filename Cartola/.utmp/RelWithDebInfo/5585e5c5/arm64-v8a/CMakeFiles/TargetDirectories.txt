@@ -1,0 +1,5 @@
+C:/Users/PC/Documents/GitHub/Jogo-da-Cartola/Cartola/.utmp/RelWithDebInfo/5585e5c5/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/PC/Documents/GitHub/Jogo-da-Cartola/Cartola/.utmp/RelWithDebInfo/5585e5c5/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/PC/Documents/GitHub/Jogo-da-Cartola/Cartola/.utmp/RelWithDebInfo/5585e5c5/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/Users/PC/Documents/GitHub/Jogo-da-Cartola/Cartola/.utmp/RelWithDebInfo/5585e5c5/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+C:/Users/PC/Documents/GitHub/Jogo-da-Cartola/Cartola/.utmp/RelWithDebInfo/5585e5c5/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

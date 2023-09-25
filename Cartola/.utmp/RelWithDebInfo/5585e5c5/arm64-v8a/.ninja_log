@@ -1,0 +1,5 @@
+# ninja log v5
+932	1253	7173813310508355	C:/Users/PC/Documents/GitHub/Jogo-da-Cartola/Cartola/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5585e5c5/obj/arm64-v8a/libswappywrapper.so	15c8dae7673bc4d9
+1	929	7173813308240309	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	acceaf78ad2f258c
+5	238	7173833976796886	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	acceaf78ad2f258c
+239	642	7173833980162569	C:/Users/PC/Documents/GitHub/Jogo-da-Cartola/Cartola/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5585e5c5/obj/arm64-v8a/libswappywrapper.so	15c8dae7673bc4d9
