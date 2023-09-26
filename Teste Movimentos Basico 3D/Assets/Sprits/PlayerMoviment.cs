@@ -8,11 +8,14 @@ public class PlayerMoviment : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private Joystick joystick;
-
+    [SerializeField] private Animator animator;
+    [SerializeField] private Vector3 inputs;
+ 
     // Start is called before the first frame update
     void Start()
     {
-
+       
+        animator = GetComponent<Animator>();    
     }
 
     // Update is called once per frame
@@ -23,6 +26,14 @@ public class PlayerMoviment : MonoBehaviour
 
         transform.position += new Vector3(xMovement, 0f, zMovement) * speed * Time.deltaTime;
 
+        if(inputs != Vector3.zero)
+        {
+            animator.SetBool("Walk", true);
+        }
+        else
+        {
+            animator.SetBool("Walk", false);
+        }
     }
 
 }
